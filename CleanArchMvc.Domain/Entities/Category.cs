@@ -12,6 +12,7 @@ namespace CleanArchMvc.Domain.Entities
         //esta herdando o implementação de Id da classe base
         public string Name { get; private set; }
 
+
         public Category(string name)
         {
             ValidateDomain(name);
@@ -20,6 +21,7 @@ namespace CleanArchMvc.Domain.Entities
         public Category(int id, string name)
         {
             DomainExceptionValidation.When(id < 0, "Invalid id");
+            Id = id;
             ValidateDomain(name);
         }
 
